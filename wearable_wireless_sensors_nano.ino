@@ -4,11 +4,11 @@
 #include "Bluetooth_setup.h"
 #include "neopixel_setup.h"
 
-#define accelerometer false
+#define accelerometer true
 #define pedometer false
 #define pace_monitor false
-#define resistance_meter true
-#define calc_resistivity true
+#define resistance_meter false
+#define calc_resistivity false
 #define bluetooth false
 #define neopixel false
 
@@ -17,12 +17,8 @@ void setup() {
   pinMode(LED_BUILTIN, OUTPUT);
 
   if( accelerometer ){
-    if (myIMU.begin() != IMU_SUCCESS)
-        {
-          Serial.println("Failed accelerometer setup.");
-          while(1);
-        }
-    }
+    myIMU.begin();
+   }
 
   if( bluetooth ){
     BTserial.begin(9600);
