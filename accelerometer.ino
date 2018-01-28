@@ -41,7 +41,7 @@ void step_counter(){
       
       digitalWrite(LED_BUILTIN, HIGH);   // LED on
       // neopixel_RED();
-      delay(200);                        // wait
+      delay(50);                        // wait
       digitalWrite(LED_BUILTIN, LOW);    // LED off
       // neopixel_OFF();
     }

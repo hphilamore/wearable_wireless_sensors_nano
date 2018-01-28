@@ -6,7 +6,7 @@
 
 #define accelerometer true
 #define acceleration_mag false
-#define pedometer false
+#define pedometer true
 #define pace_monitor false
 #define resistance_meter false
 #define calc_resistivity false
