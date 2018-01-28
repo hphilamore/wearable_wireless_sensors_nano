@@ -5,6 +5,7 @@
 #include "neopixel_setup.h"
 
 #define accelerometer true
+#define acceleration_mag false
 #define pedometer false
 #define pace_monitor false
 #define resistance_meter false
@@ -17,25 +18,28 @@ void setup() {
   pinMode(LED_BUILTIN, OUTPUT);
 
   if( accelerometer ){
-    myIMU.begin();
+    myIMU.begin();        // connects to accelerometer 
    }
 
   if( bluetooth ){
-    BTserial.begin(9600);
+    BTserial.begin(9600); // connects to bluetooth module
   }
 
   if( neopixel ){
-    strip.begin();
+    strip.begin();        // connects neopixel LED
     strip.show();  
   }
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
 
   if( accelerometer ){ 
     acceleration_3D();
-    magnitude_3D();
+    //magnitude_3D();
+
+    if( acceleration_mag ){
+      magnitude_3D();
+    }
 
     if( pedometer ){
       step_counter();
@@ -57,7 +61,7 @@ void loop() {
 
   print_variables();
 
-  delay(200);
+  delay(20);
   
 }
 

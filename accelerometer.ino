@@ -28,6 +28,8 @@ void step_counter(){
   Flashes an LED when a step is logged.
   */
 
+  magnitude_3D();
+
   int th = step_threshold;
 
   // if the magnitude is greater than the threshold and the flag is down...
@@ -65,6 +67,8 @@ void pace(){
   Calculates the average pace (steps / time second)
   Lights an LED if the pace drops below a threshold value
   */
+
+  magnitude_3D();
   
   unsigned long p = pace_period;
   int th = pace_threshold;
