@@ -6,7 +6,7 @@ LSM303C myIMU;
 #define y 1
 #define z 2
 
-#define step_threshold 1200        // the magnitude of acceleration above which a step is registered
+#define step_threshold 3000        // the magnitude of acceleration above which a step is registered
 #define pace_period 3000           // the period (in ms) over which steps are counted to calculate pace
 #define pace_threshold 0.0005      // the pace above which a light will switch on
 
